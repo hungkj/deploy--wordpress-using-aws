@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: "dbinstances-1.cbyc0caug3lt.ap-southeast-1.rds.amazonaws.com:3306"
+      WORDPRESS_DB_NAME: "hatdieu"
+      WORDPRESS_DB_USER: "admin"
+      WORDPRESS_DB_PASSWORD: "maivanhung"
+      WORDPRESS_TABLE_PREFIX: "bz_"
+     restart: always
